@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { --c-ivory:213 223 211; --c-champagne:196 205 190; --c-sand:194 199 155; --c-espresso:30 43 36; --c-charcoal:38 58 44; --c-muted:45 70 48; --c-deep:38 58 44; --c-warm:238 242 234; --acc:31 94 65; }
+.dark { --c-ivory:30 43 36; --c-champagne:38 58 44; --c-sand:194 199 155; --c-espresso:213 223 211; --c-charcoal:196 205 190; --c-muted:194 199 155; --c-deep:45 70 48; --c-warm:38 58 44; --acc:194 199 155; }
+.dark-sec { --c-ivory:213 223 211; --c-champagne:196 205 190; --c-sand:194 199 155; --c-espresso:30 43 36; --c-charcoal:45 70 48; --c-muted:196 205 190; --c-warm:238 242 234; --acc:194 199 155; }
+.lt { --c-ivory:238 242 234; --c-champagne:213 223 211; --c-sand:194 199 155; --c-espresso:30 43 36; --c-charcoal:38 58 44; --c-muted:45 70 48; --c-warm:238 242 234; --acc:31 94 65; }
+.dark .lt { --c-ivory:30 43 36; --c-champagne:38 58 44; --c-espresso:213 223 211; --c-charcoal:196 205 190; --c-muted:194 199 155; --c-warm:30 43 36; --acc:194 199 155; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
+body { @apply bg-ivory font-medium text-charcoal font-sans antialiased; overflow-x: hidden; }
+:focus-visible { outline: 2px solid rgb(var(--acc)); outline-offset: 3px; }
+::selection { background: rgb(var(--acc)); color: rgb(var(--c-ivory)); }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 32s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; flex-wrap: wrap; width: auto; } }
